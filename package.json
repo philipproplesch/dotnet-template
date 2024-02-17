@@ -3,15 +3,21 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prepare": "husky && dotnet tool restore"
+    "prepare": "husky && dotnet tool restore",
+    "format:csharpier": "dotnet dotnet-csharpier",
+    "format:prettier": "prettier **/*.{md,ts,js,css,json,yml,yaml} --write"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.6.1",
     "@commitlint/config-conventional": "^18.6.2",
     "husky": "^9.0.11",
-    "lint-staged": "^15.2.2"
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5"
   },
   "lint-staged": {
-    "*.cs": "dotnet dotnet-csharpier --check"
+    "*.cs": "npm run format:csharpier",
+    "*.{ts,js,json,yml,md}": [
+      "npm run format:prettier"
+    ]
   }
 }

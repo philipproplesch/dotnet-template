@@ -6,4 +6,4 @@ This a basic (and opionated) template that I generally use to get new .NET proje
 
 - Centrally managed NuGet packages and .NET `TargetFramework`
 - Enforce [conventional commits](https://www.conventionalcommits.org/) via Git Hook
-- EditorConfig, which is also picked up by [CSharpier](https://csharpier.com/)
+- Auto-formatting of common file types using [CSharpier](https://csharpier.com/) and [Prettier](https://prettier.io/)
